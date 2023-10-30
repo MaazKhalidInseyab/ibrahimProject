@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Are Stars</title>
+   <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <header style="color: black; height: 20 px; justify-content: space-around;">
+        <h2 style="text-align: center;">Survey</h2>
+        <nav style=" align-items: center;">
+            <ul>
+                <li><a class="active" href="./index.html">Home</a></li>
+                <li><a href="./survey.html">Survey</a></li>
+                <li><a href="./contactUs.html">Contact</a></li>
+                <li><a href="./aboutUs.html">About</a></li>
+              </ul>
+        </nav>
+    </header>
+    <div
+    style="border-radius: 10px; background-color: darkgoldenrod; margin: auto; min-width: 200px; max-width: max-content; text-align: center;">
+    <h1 style="font-size: 3lvw;color: white;">Lets take a survey!</h1>
+    <h4 style="color: aliceblue;">Help us improve with your valuable feedback</h4>
+    <form action="">
+        <table style="padding: 5lvw;">
+            <tr style="text-align: left;"><label  for="Name">Name</label><br>
+                <input  style="width: 20lvw; border-radius: 6px; padding: 5px;" type="text" id="name" required name="name"><br>
+            </tr>
+
+            <tr><label for="email">Email</label><br>
+                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="text" required id="email"><br>
+            </tr>
+            <tr style="width:20lvw;"><label for="subject">Date</label><br>
+                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="date"  required id="subject"><br>
+            </tr>
+            <tr style="width:20lvw;"><label for="subject">Attach a document</label><br>
+                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="file"  required id="subject"><br>
+            </tr>
+            <tr style="width:20lvw;"><label for="subject">No. of attachments</label><br>
+                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="number"  required id="subject"><br>
+            </tr>
+            <tr style="width:20lvw;"><label for="subject">Male</label><br>
+                <input name="gender"style="width: 20lvw; border-radius: 6px; padding: 5px;" type="radio"  required id="gender"><br>
+            </tr>
+            <tr style="width:20lvw;"><label for="subject">Female</label><br>
+                <input name="gender" style="width: 20lvw; border-radius: 6px; padding: 5px;" type="radio"  required id="gender"><br>
+            </tr>
+            <tr><label for="response">Feedback</label><br>
+                <textarea style="width: 20lvw; border-radius: 6px; padding: 5px;" required id="response" rows="6" cols="21"></textarea>
+                <br> </tr>
+            <tr style="width:20lvw;"><label for="subject">I have read the form thoroughly</label><br>
+               <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="checkbox"  required id="subject"><br>
+            </tr>
+            <tr>
+                <br><button type="submit">Submit</button>
+            </tr>
+
+
+        </table>
+    </form>
+</div>
+</body>
+</html>
