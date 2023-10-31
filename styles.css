@@ -37,6 +37,26 @@ li a:hover {
     }
     
   }
+  @media only screen and ( min-width:600px){
+    footer{
+      display:none;
+    }
+  }
+  .flex-container {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(0, 8, 119);
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    margin: 10px;
+    padding: 4px;
+    font-size: 2lvW;
+  }
   label{
     color:white;
+  }
+  .flex-container >div >a{
+    text-decoration: none;
   }
