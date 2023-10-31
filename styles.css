@@ -6,7 +6,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: darkgoldenrod;
+  background-color: rgb(0, 8, 119);
 }
 
 li {
@@ -28,11 +28,15 @@ li a:hover {
  color: white; font-size: 2lvw;padding:0.5lvw;text-align: center;
 }
 .cardBody{
-  border-radius: 1lvw; width: 15lvw; height: 30lvw; background-color: goldenrod;
+  border-radius: 1lvw; width: 15lvw; height: 30lvw; background-color:  rgb(0, 8, 119);
 }
 @media only screen and (max-width: 600px){
   /*for mobile*/
     header{
       display: none;
     }
+    
+  }
+  label{
+    color:white;
   }
