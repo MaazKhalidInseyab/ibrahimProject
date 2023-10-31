@@ -22,7 +22,7 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: aqua;
 }
 .cardText{
  color: white; font-size: 2lvw;padding:0.5lvw;text-align: center;
