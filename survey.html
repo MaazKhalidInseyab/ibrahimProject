@@ -3,65 +3,462 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>We Are Stars</title>
-   <link rel="stylesheet" href="./styles.css">
-   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Take a Survey</title>
+    <style>
+       
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+        .formbold-main-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: #f4623a;
+          padding: 48px;
+        }
+        .formbold-form-wrapper > label{
+            color: white; 
+        }
+     
+        .formbold-form-wrapper {
+          margin: 0 auto;
+          border-radius: 20px;
+          max-width: 570px;
+          width: 100%;
+          background: white;
+          padding: 40px;
+        }
+      
+        .formbold-form-img {
+          margin-bottom: 45px;
+        }
+      
+        .formbold-input-group {
+          margin-bottom: 18px;
+        }
+      
+        .formbold-form-select {
+          width: 100%;
+          padding: 12px 22px;
+          border-radius: 5px;
+          border: 1px solid #dde3ec;
+          background: #ffffff;
+          font-size: 16px;
+          color: #536387;
+          outline: none;
+          resize: none;
+        }
+      
+        .formbold-input-radio-wrapper {
+          margin-bottom: 25px;
+        }
+        .formbold-radio-flex {
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+        .formbold-radio-label {
+          font-size: 14px;
+          line-height: 24px;
+          color: #07074d;
+          position: relative;
+          padding-left: 25px;
+          cursor: pointer;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+        }
+        .formbold-input-radio {
+          position: absolute;
+          opacity: 0;
+          cursor: pointer;
+        }
+        .formbold-radio-checkmark {
+          position: absolute;
+          top: -1px;
+          left: 0;
+          height: 18px;
+          width: 18px;
+          background-color: #ffffff;
+          border: 1px solid #dde3ec;
+          border-radius: 50%;
+        }
+        .formbold-radio-label
+          .formbold-input-radio:checked
+          ~ .formbold-radio-checkmark {
+          background-color: #6a64f1;
+        }
+        .formbold-radio-checkmark:after {
+          content: '';
+          position: absolute;
+          display: none;
+        }
+      
+        .formbold-radio-label
+          .formbold-input-radio:checked
+          ~ .formbold-radio-checkmark:after {
+          display: block;
+        }
+      
+        .formbold-radio-label .formbold-radio-checkmark:after {
+          top: 50%;
+          left: 50%;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background: #ffffff;
+          transform: translate(-50%, -50%);
+        }
+      
+        .formbold-form-input {
+          width: 100%;
+          padding: 13px 22px;
+          border-radius: 5px;
+          border: 1px solid #dde3ec;
+          background: #ffffff;
+          font-weight: 500;
+          font-size: 16px;
+          color: #07074d;
+          outline: none;
+          resize: none;
+        }
+        .formbold-form-input::placeholder {
+          color: #536387;
+        }
+        .formbold-form-input:focus {
+          border-color: #6a64f1;
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+        .formbold-form-label {
+          color: #07074d;
+          font-size: 14px;
+          line-height: 24px;
+          display: block;
+          margin-bottom: 10px;
+        }
+      
+        .formbold-btn {
+          text-align: center;
+          width: 100%;
+          font-size: 16px;
+          border-radius: 5px;
+          padding: 14px 25px;
+          border: none;
+          font-weight: 500;
+          background-color: #6a64f1;
+          color: white;
+          cursor: pointer;
+          margin-top: 25px;
+        }
+        .formbold-btn:hover {
+          box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.05);
+        }
+      </style>
+      <link href="css/styles.css" rel="stylesheet" />
 </head>
 <body>
-    <header style="color: black; height: 20 px; justify-content: space-around;">
-        
-        <nav style=" align-items: center;">
-            <ul>
-                <li><a class="active" href="./index.html">Home</a></li>
-                <li><a href="./survey.html">Survey</a></li>
-                <li><a href="./contactUs.html">Contact</a></li>
-                <li><a href="./aboutUs.html">About</a></li>
-              </ul>
-        </nav>
-    </header>
-    <div
-    style="border-radius: 10px; background-color:  hsl(208, 100%, 71%); margin: auto; min-width: 200px; max-width: max-content; text-align: center;">
-    <h1 style="font-size: 3lvw;color: white;">Lets take a survey!</h1>
-    <h4 style="color: aliceblue;">Help us improve with your valuable feedback</h4>
-    <form action="">
-        <table style="padding: 5lvw;">
-            <tr style="text-align: left;"><label  for="Name">Name</label><br>
-                <input  style="width: 20lvw; border-radius: 6px; padding: 5px;" type="text" id="name" required name="name"><br>
-            </tr>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+        <div class="container px-4 px-lg-5">
+            <a class="navbar-brand" href="#page-top">We are Stars</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./About.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./survey.html">Survey</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./Contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="formbold-main-wrapper">
+        <!-- Author: FormBold Team -->
+        <!-- Learn More: https://formbold.com -->
+       
+        <div class="formbold-form-wrapper" style=" background-image:url('./assets/img/bg-masthead.jpg'); background-repeat: no-repeat; background-size: 360%;">
+          <!-- <img src="./assets/img/portfolio/fullsize/1.jpg" style="border-radius: 10px; height: 200px; width: 100%;"> -->
+          
+          <video width="100%" height="240" autoplay>
+            <source src="./assets/videoplayback.mp4" type="video/mp4">
+            <source src="movie.ogg" type="video/ogg">
+          Your browser does not support the video tag.
+          </video>
+          <form action="mailto:maaz.41408@iqra.edu.pk" method="POST">
+            <fieldset>
+                <legend  style="color: white;" >Personal Information:</legend>  <div class="formbold-input-group">
+                
+              <label style="color: white;" for="name" class="formbold-form-label"> Name </label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+                class="formbold-form-input"
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+            
+              <label style="color: white;" for="email" class="formbold-form-label"> Email </label>
+              <input
+                type="email"
+                name="lastname"
+                id="email"
+                placeholder="Enter your email"
+                class="formbold-form-input"
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+                
+              <label style="color: white;" for="age" class="formbold-form-label"> Age </label>
+              <input
+                type="text"
+                name="age"
+                id="age"
+                placeholder="Enter your age"
+                class="formbold-form-input"
+              />
+            </div>
+      
+            <div class="formbold-input-group">
+                
+              <label style="color: white;" class="formbold-form-label">
+                Which option best describes you?
+              </label>
+      
+              <select class="formbold-form-select" name="occupation" id="occupation">
 
-            <tr><label  for="email">Email</label><br>
-                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="text" required id="email"><br>
-            </tr>
-            <tr style="width:20lvw;"><label for="subject">Date</label><br>
-                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="date"  required id="subject"><br>
-            </tr>
-            <tr style="width:20lvw;"><label for="subject">Attach a document</label><br>
-                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="file"  required id="subject"><br>
-            </tr>
-            <tr style="width:20lvw;"><label for="subject">No. of attachments</label><br>
-                <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="number"  required id="subject"><br>
-            </tr>
-            <tr style="width:20lvw;"><label for="subject">Male</label><br>
-                <input name="gender"style="width: 20lvw; border-radius: 6px; padding: 5px;" type="radio"  required id="gender"><br>
-            </tr>
-            <tr style="width:20lvw;"><label for="subject">Female</label><br>
-                <input name="gender" style="width: 20lvw; border-radius: 6px; padding: 5px;" type="radio"  required id="gender"><br>
-            </tr>
-            <tr><label for="response">Feedback</label><br>
-                <textarea style="width: 20lvw; border-radius: 6px; padding: 5px;" required id="response" rows="6" cols="21"></textarea>
-                <br> </tr>
-            <tr style="width:20lvw;"><label for="subject">I have read the form thoroughly</label><br>
-               <input style="width: 20lvw; border-radius: 6px; padding: 5px;" type="checkbox"  required id="subject"><br>
-            </tr>
-            <tr>
-                <br><button type="submit">Submit</button>
-            </tr>
+                <option value="Student">Student</option>
+                <option value="designer">UX/UI Designer</option>
+                <option value="fullstack">Full Stack Developer</option>
+                <option value="frontend">Front End Developer</option>
+              </select>
+            </div>
+      
+            <div class="formbold-input-radio-wrapper">
+            
+              <label style="color: white;" for="ans" class="formbold-form-label">
+                Would you recomend our site to a friend?
+              </label>
+              <div class="formbold-radio-flex">
+                <div class="formbold-radio-group">
+                  <label style="color: white;" class="formbold-radio-label">
+                    <input style="color: white;"
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="ans"
+                      id="ans"
+                    />
+                    Yes
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label style="color: white;" class="formbold-radio-label">
+                    <input style="color: white;"
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="ans"
+                      id="ans"
+                    />
+                    No
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label style="color: white;" class="formbold-radio-label">
+                    <input style="color: white;"
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="ans"
+                      id="ans"
+                    />
+                    Maybe
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+      
+            <!-- <div class="formbold-input-radio-wrapper">
+              <label class="formbold-form-label">
+                Which languages & freameworks you know?
+              </label>
+      
+              <div class="formbold-radio-flex">
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="c">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="c"
+                      id="c"
+                    />
+                    C
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="c++">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="c++"
+                      id="c++"
+                    />
+                    c++
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="java">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="java"
+                      id="java"
+                    />
+                    Java
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="python">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="python"
+                      id="python"
+                    />
+                    Python
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="javaScript">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="javaScript"
+                      id="javaScript"
+                    />
+                    JavaScript
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="react">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="react"
+                      id="react"
+                    />
+                    React
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="angular">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="angular"
+                      id="angular"
+                    />
+                    Angular
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="django">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="django"
+                      id="django"
+                    />
+                    Django
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="tailwind">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="tailwind"
+                      id="tailwind"
+                    />
+                    Tailwind CSS
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+      
+                <div class="formbold-radio-group">
+                  <label class="formbold-radio-label" for="bootstrap">
+                    <input
+                      class="formbold-input-radio"
+                      type="radio"
+                      name="bootstrap"
+                      id="bootstrap"
+                    />
+                    Bootstrap
+                    <span class="formbold-radio-checkmark"></span>
+                  </label>
+                </div>
+              </div>
+            </div> -->
+            <div>
+            <input type="checkbox" id="terms" value="accepted">
+                <label style="color: white;" for="terms" class="formbold-form-label">
+                    I have provided the correct information
+                  </label>
+                
+              </div>
 
 
-        </table>
-    </form>
-</div>
+            <div>
+              <label style="color: white;" for="message" class="formbold-form-label">
+                Any comments or suggestions
+              </label>
+              <textarea
+                rows="6"
+                name="message"
+                id="message"
+                placeholder="Type here..."
+                class="formbold-form-input"
+              ></textarea>
+            </div></fieldset>
+      
+            <button class="formbold-btn"  >Submit</button>
+          </form>
+        </div>
+      </div>
+      <!-- Footer-->
+      <footer class="bg-light py-5">
+        <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - We are Stars</div></div>
+
+        <div class="container px-4 px-lg-5 pt-2"><div class="small text-center text-muted">Distributed By <a href="https://www.instagram.com/ibrahim._.majid/">Ibrahim Majid</a>
+        </div></div>
+    </footer>
 </body>
 </html>
